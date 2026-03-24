@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Ticket - EventFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">EventFlow</a>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container main-content">
+        <div class="form-container">
+            <h2>Book Tickets</h2>
+            <div id="event-details" style="background: #f8f9fa; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+                <!-- Event details injected by script -->
+            </div>
+
+            <form onsubmit="bookTickets(event)">
+                <div class="form-group">
+                    <label>Number of Tickets</label>
+                    <input type="number" name="tickets" min="1" value="1" required>
+                </div>
+                <button type="submit" class="btn-submit">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const eventId = parseInt(urlParams.get('id'));
+        const events = JSON.parse(localStorage.getItem('events'));
+        const event = events.find(e => e.id === eventId);
+        
+        if (event) {
+            document.getElementById('event-details').innerHTML = `
+                <h3 style="margin-bottom: 5px;">${event.name}</h3>
+                <p style="font-size: 14px; color: #777;">Price: $${event.price} per ticket</p>
+                <p style="font-size: 14px; color: #777;">Available: ${event.available_tickets} tickets</p>
+            `;
+            document.querySelector('input[name="tickets"]').max = event.available_tickets;
+        }
+    </script>
+</body>
+</html>

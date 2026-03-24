@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Events - EventFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">EventFlow</a>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container main-content">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+            <h2>Manage Events</h2>
+            <a href="#add-event" class="btn-submit" style="width: auto; padding: 10px 20px; text-decoration: none;">Add New Event</a>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Event Name</th>
+                    <th>Date & Location</th>
+                    <th>Price</th>
+                    <th>Tickets</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="manage-events-table">
+                <!-- Events injected by script -->
+            </tbody>
+        </table>
+
+        <div id="add-event" class="form-container" style="max-width: 600px; margin-top: 60px;">
+            <h2>Add New Event</h2>
+            <form onsubmit="addEvent(event)">
+                <div class="form-group">
+                    <label>Event Name</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label>Location</label>
+                    <input type="text" name="location" required>
+                </div>
+                <div class="form-group">
+                    <label>Price ($)</label>
+                    <input type="number" name="price" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label>Available Tickets</label>
+                    <input type="number" name="available_tickets" required>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea name="description" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Create Event</button>
+            </form>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

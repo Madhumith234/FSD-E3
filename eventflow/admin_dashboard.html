@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - EventFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">EventFlow</a>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container main-content">
+        <h2 style="margin-bottom: 30px;">Admin Dashboard</h2>
+
+        <div class="stats-grid" id="admin-stats">
+            <div class="stat-box">
+                <h3>Total Events</h3>
+                <p id="total-events">0</p>
+            </div>
+            <div class="stat-box">
+                <h3>Total Bookings</h3>
+                <p id="total-bookings">0</p>
+            </div>
+            <div class="stat-box">
+                <h3>Total Users</h3>
+                <p id="total-users">0</p>
+            </div>
+        </div>
+
+        <div style="background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <h3 style="margin-bottom: 20px;">Quick Actions</h3>
+            <div style="display: flex; gap: 20px;">
+                <a href="manage_events.html" class="btn-submit" style="text-decoration: none; text-align: center; width: auto; padding: 15px 30px;">Manage Events</a>
+                <a href="index.html" class="btn-submit" style="text-decoration: none; text-align: center; width: auto; padding: 15px 30px; background: #34495e;">View Site</a>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
